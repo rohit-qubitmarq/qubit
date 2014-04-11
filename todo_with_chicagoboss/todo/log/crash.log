@@ -1,0 +1,30 @@
+2013-09-18 10:10:14 =ERROR REPORT====
+GET / [todo] 404 7ms2013-09-18 18:15:13 =ERROR REPORT====
+GET / [todo] 404 9ms2013-09-18 18:15:22 =ERROR REPORT====
+GET /todoapp/ [todo] 404 1056ms2013-09-18 18:15:54 =ERROR REPORT====
+GET /todoapp/ [todo] 404 6ms2013-09-18 18:15:59 =ERROR REPORT====
+GET /todoapp/index.html [todo] 404 20ms2013-09-18 18:16:04 =ERROR REPORT====
+GET /todoapp/todo.html [todo] 404 23ms2013-09-18 18:16:20 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,poolboy_sup}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{nb_children,1},{name,boss_session_controller},{mfargs,{boss_session_controller,start_link,[[{name,{local,boss_session_pool}},{worker_module,boss_session_controller},{size,20},{max_overflow,40},{adapter,boss_session_adapter_mock},{session_exp_time,525600},{session_key,"_boss_session"}]]}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2013-09-18 18:17:06 =ERROR REPORT====
+GET /priv/statuc/todoapp/todo.html [todo] 404 12ms2013-09-18 18:17:16 =ERROR REPORT====
+GET /priv/statuc/todoapp/todo.html [todo] 404 8ms2013-09-18 18:19:03 =ERROR REPORT====
+GET /priv/statuc/todoapp/todo.html [todo] 404 8ms2013-09-18 18:31:16 =ERROR REPORT====
+GET /priv/statuc/todoapp/todo.html [todo] 404 12ms2013-09-18 18:31:18 =ERROR REPORT====
+GET /priv/statuc/todoapp/todo.html [todo] 404 10ms2013-09-18 18:56:21 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,poolboy_sup}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{nb_children,13},{name,boss_session_controller},{mfargs,{boss_session_controller,start_link,[[{name,{local,boss_session_pool}},{worker_module,boss_session_controller},{size,20},{max_overflow,40},{adapter,boss_session_adapter_mock},{session_exp_time,525600},{session_key,"_boss_session"}]]}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2014-04-11 13:05:30 =ERROR REPORT====
+GET / [todo] 404 6ms2014-04-11 13:05:44 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,poolboy_sup}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{nb_children,11},{name,boss_session_controller},{mfargs,{boss_session_controller,start_link,[[{name,{local,boss_session_pool}},{worker_module,boss_session_controller},{size,20},{max_overflow,40},{adapter,boss_session_adapter_mock},{session_exp_time,525600},{session_key,"_boss_session"}]]}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+

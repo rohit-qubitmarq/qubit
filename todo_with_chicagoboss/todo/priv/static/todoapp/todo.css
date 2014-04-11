@@ -1,0 +1,21 @@
+.completed-true {
+    text-decoration: line-through;
+    }
+
+div{
+	margin: auto;
+	font-size: 1em;
+	font-weight: bold;
+    text-align: center;
+    color: #a9a9a9;
+	width: 40%;
+	text-align: center;
+	/*color: #FFF;*/
+}
+#todotable {
+    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
+    margin: auto;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+    0 25px 50px 0 rgba(0, 0, 0, 0.15);
+}

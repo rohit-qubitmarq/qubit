@@ -1,0 +1,15 @@
+2013-09-18 10:10:14.298 [error] <0.145.0> GET / [todo] 404 7ms
+2013-09-18 18:15:13.673 [error] <0.143.0> GET / [todo] 404 9ms
+2013-09-18 18:15:22.597 [error] <0.143.0> GET /todoapp/ [todo] 404 1056ms
+2013-09-18 18:15:54.809 [error] <0.143.0> GET /todoapp/ [todo] 404 6ms
+2013-09-18 18:15:59.657 [error] <0.143.0> GET /todoapp/index.html [todo] 404 20ms
+2013-09-18 18:16:04.850 [error] <0.143.0> GET /todoapp/todo.html [todo] 404 23ms
+2013-09-18 18:16:20.153 [error] <0.106.0> Supervisor poolboy_sup had child boss_session_controller started with boss_session_controller:start_link([{name,{local,boss_session_pool}},{worker_module,boss_session_controller},{size,20},{max_overflow,...},...]) at undefined exit with reason shutdown in context shutdown_error
+2013-09-18 18:17:06.747 [error] <0.152.0> GET /priv/statuc/todoapp/todo.html [todo] 404 12ms
+2013-09-18 18:17:16.654 [error] <0.152.0> GET /priv/statuc/todoapp/todo.html [todo] 404 8ms
+2013-09-18 18:19:03.991 [error] <0.152.0> GET /priv/statuc/todoapp/todo.html [todo] 404 8ms
+2013-09-18 18:31:16.145 [error] <0.144.0> GET /priv/statuc/todoapp/todo.html [todo] 404 12ms
+2013-09-18 18:31:18.348 [error] <0.144.0> GET /priv/statuc/todoapp/todo.html [todo] 404 10ms
+2013-09-18 18:56:21.433 [error] <0.106.0> Supervisor poolboy_sup had child boss_session_controller started with boss_session_controller:start_link([{name,{local,boss_session_pool}},{worker_module,boss_session_controller},{size,20},{max_overflow,...},...]) at undefined exit with reason shutdown in context shutdown_error
+2014-04-11 13:05:30.448 [error] <0.154.0> GET / [todo] 404 6ms
+2014-04-11 13:05:44.040 [error] <0.106.0> Supervisor poolboy_sup had child boss_session_controller started with boss_session_controller:start_link([{name,{local,boss_session_pool}},{worker_module,boss_session_controller},{size,20},{max_overflow,...},...]) at undefined exit with reason shutdown in context shutdown_error

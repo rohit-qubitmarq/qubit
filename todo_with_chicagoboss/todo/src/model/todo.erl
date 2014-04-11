@@ -1,0 +1,2 @@
+-module(todo, [Id, Text::string(), Complete::boolean(), Created::integer()]).
+-compile(export_all).
