@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ToDo</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        
+        <script src="todo.js"></script>
+        <link rel="stylesheet" href="todo.css">
+    </head>
+    <body>
+        <div class="row-fluid">
+            <h2>Things To Do!</h2>
+        </div>
+
+        <div ng-controller="TodoCtrl">
+            <form ng-submit="addTodo()">
+                <select class="dropdown-toggle" ng-model="dropdownSelect" >
+                    <option value="">All</option>
+                    <option value="false">Active</option>
+                    <option value="true">Completed</option>
+                </select>
+                <input type="text" ng-model="todoText" size="30" placeholder="What need's to be done?" required>
+            </form>
+            
+            <table class="table table-bordered" >
+                <tr ng-repeat="todo in todos | filter:dropdownSelect">
+                    <td >
+                        <label class="checkbox">
+                        <input type="checkbox" ng-model="todo.complete">
+                        <span class="completed-{{todo.complete}}">{{todo.text}}</span></label>
+                    </td>
+                </tr>
+            </table>
+
+            <div>
+                <button class="btn btn-danger" ng-click="delete()">Clear Completed</button></br>
+                    <span>{{remaining()}} of {{todos.length}} task remaining</span>
+            </div>
+        </div>
+
+    </body>
+</html>

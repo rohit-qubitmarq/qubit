@@ -1,0 +1,16 @@
+.completed-true {
+    text-decoration: line-through;
+    }
+
+div{
+	
+	margin: auto;
+	font-size: 1em;
+	width: 35%;
+	text-align: center;
+}
+body {
+   background-color: white;
+   margin: 0;
+   padding: 0;
+}
