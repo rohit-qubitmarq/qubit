@@ -1,0 +1,10 @@
+{plugin_dir, ["priv/rebar"]}.
+{plugins, [boss_plugin]}.
+{eunit_compile_opts, [{src_dirs, ["src/test"]}]}.
+{lib_dirs, ["/home/rohit/qubitinformationsystems/DASHBOARD/ChicagoBoss/deps/elixir/lib"]}.
+{deps, [
+       {bcrypt, ".*", {git, "git://github.com/mrinalwadhwa/erlang-bcrypt.git", "14641089aa"}},
+       {detergent, ".*", {git, "git://github.com/devinus/detergent.git", "master"}},
+       {erlsom, ".*", {git, "git://github.com/willemdj/erlsom.git", "master"}},
+       {oauth, ".*", {git, "git://github.com/entronic/erlang-oauth.git", "master"}}
+       ]}.

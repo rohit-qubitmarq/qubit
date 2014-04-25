@@ -1,0 +1,2 @@
+-module(rdks, [Id, Date::integer(), Coords::integer()]).
+-compile(export_all).
