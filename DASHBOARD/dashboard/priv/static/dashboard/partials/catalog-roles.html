@@ -1,0 +1,19 @@
+<div class=" well container" ng-controller="DashboardCtrl">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span4">
+				<div class="sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header" ng-repeat="name in catalogname"><a href="">sublevel I<h2>{{name.name}}</h2></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="span8  nav nav-list">
+				<ul class="nav nav-list">
+					<li class="span3" ng-repeat="name in rolesnames">
+					<a href="#/role-stages/{{selectedRole.id}}" ng-click="get_stages(name.id)">{{ name.name}} </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

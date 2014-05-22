@@ -1,0 +1,55 @@
+<div id="register" class="controls" ng-controller="DashboardCtrl">
+	<form novalidate class="form-horizontal" name="registerfrm">
+		<fieldset><legend>Tell us about yourself - </legend>All fields required <strong>*</strong></fieldset>
+		
+			<div class="control-group">
+				<label class="control-label" for="username"><i class="icon-user icon-large"></i> Username :</label>
+				<div class="controls">
+					<input class="input-xlarge" type="text" name="username" id="username" ng-model="username" ng-minlength="5" placeholder="UserName" required="true" autofocus/><br />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="fname"> Firstname :</label>
+				<div class="controls">
+					<input class="input-xlarge" type="text" name="firstname" id="fname" ng-model="firstname" placeholder="FirstName" required/><br />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="lname"> Lastname :</label>
+				<div class="controls">
+					<input class="input-xlarge" type="text" name="lastname" id="lname" ng-model="lastname" placeholder="LastName" required /><br />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="email"><i class="icon-envelope icon-large"></i> Email :</label>
+				<div class="controls">
+					<input class="input-xlarge" type="email" name="email" id="email" ng-model="email" placeholder="Email Address" required/><br />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="pass"><i class="fa fa-key fa-1g"></i> Password :</label>
+				<div class="controls">
+					<input class="input-xlarge" type="password" name="password" id="pass" ng-model="password" placeholder="PassW0rd" ng-minlength="6" ng-maxlength="10" required/><br />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="cnfmpass"><i class="fa fa-key fa-1g"></i> Confirm Password :</label>
+				<div class="controls">
+					<input class="input-xlarge" type="password" name="confirm_password" id="cnfmpass" ng-model="confirm_password" placeholder="Confirm PassW0rd" ng-minlength="6" ng-maxlength="10" required /><br />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<div class="controls">
+					<button class="btn btn-success btn-block" ng-click="register()">Create my account</button>
+				</div>
+			</div>
+			
+		</form>		
+	</div>
+</div>

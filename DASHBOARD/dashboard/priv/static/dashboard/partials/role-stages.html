@@ -1,0 +1,20 @@
+<div class=" well container" ng-controller="DashboardCtrl">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span4">
+				<div class="sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header" ng-repeat="name in rolename"><a href="">sublevel II<h2>{{name.name}}</h2></a></li>
+						<!-- <li ng-repeat="name in names"><a href="#/" ng-click="put_stage(role.stages_id)">{{ name.name }}</a></li> -->
+					</ul>
+				</div>
+			</div>
+			<div class="span8  nav nav-list">
+				<ul class="nav nav-list">
+					<li class="span3" ng-repeat="name in names">
+					<a href="#/stage-metrics/{{selectedStage.id}}" ng-click="get_metrics(name.id)">{{ name.name}} </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

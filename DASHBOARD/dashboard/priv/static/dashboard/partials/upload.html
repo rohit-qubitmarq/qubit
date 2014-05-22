@@ -1,0 +1,55 @@
+<h1 class="page-header">
+            <span>Upload Climate Statics</span>
+            <!-- <p class="lead">(Metric Charts)</p> -->
+          </h1>
+
+<div ng-app="app">
+  <div ng-controller="FileUploadCtrl">
+    <form name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+      <input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+      <div ng-if="content">
+        <h2>File Contents</h2>
+        <pre>{{ content }}</pre><br/><hr/>
+        <pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+      </div>
+      <br/>
+      <input class="btn btn-success" type="submit" value="Upload" upload-submit></input>
+      <!-- <a href='javascript:void(0)' class="upload-submit"> Upload </a> -->
+    </form>
+  </div>
+</div>
+<script src="js/jquery.csv-0.71.min.js"></script>
+
+<!-- <div class="alert alert-info">Server Response: {{response | jsonData}}</div>
+ --><!-- <div>
+  Fullname: <b>{{response.fullname}}</b><br />
+  Gender: <b>{{response.gender}}</b><br />
+  Picture: {{response.pictureUrl}}
+</div> --> 
+<!-- <form ng-upload="uploadComplete(content)" ng action="/upload-full-form">
+  <p>
+    <label>Fullname:</label>
+    <input type="text" name="fullname" ng-model="fullname" />
+  </p>
+  <p>
+    <label>Gender:</label>
+    <input type="text" name="gender" ng-model="gender" />
+  </p>
+  <p>
+    <label>Favorite Color:</label>
+    <input type="text" name="color" ng-model="color"/>
+  </p>
+  <p>
+    <label>Your file (file will not be saved on the server):</label>
+    <input type="file" name="file" />
+  </p>
+  <p>
+    <input type="submit" class="btn" value="Submit" ng-disabled="$isLoading"  />
+  </p>
+</form>
+<div class="alert alert-info">Server Response: {{response | json}}</div>
+<div>
+  Fullname: <b>{{response.fullname}}</b><br />
+  Gender: <b>{{response.gender}}</b><br />
+  Picture: {{response.pictureUrl}}
+</div> -->

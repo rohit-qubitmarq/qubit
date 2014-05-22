@@ -6,94 +6,181 @@
 		<title>Dashboard</title>
 	
 	<!-- scripts -->
+        <script src="js/jquery-2.1.1.min.js"></script>
 		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/angular/angular-route.js"></script>
 		<script src="lib/angular/angular-route.min.js"></script>
+		<!-- // <script src="lib/angular/angular-route.min.js.map"></script> -->
 		<script src="lib/angular/angular-cookies.min.js"></script>
 		<script src="lib/angular/angular-resource.min.js"></script>
 		<script src="lib/angular/angular-loader.min.js"></script>
-		<script src="lib/angular/angular-sanitize.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<!-- // <script src="lib/angular/angular-sanitize.min.js"></script> -->
+		<!-- // <script src="lib/angular/angular-mocks.js"></script> -->
+		<script src="lib/angular/ng-upload.js"></script>
+		<script src="lib/angular/angular.treeview.js"></script>
+		<!-- // <script src="lib/angular/abn_tree_directive.js"></script> -->
+        <script src="js/bootstrap.js"></script>
+		<script src="js/dropdown.js"></script>
+		<script src="js/ngTree.js"></script>
+		<script src="js/onReadFile.js"></script>
+
+	<!-- 	// <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+		<!-- // <script src="http://code.highcharts.com/stock/highstock.src.js"></script> -->
+		<!-- // <script src="http://code.highcharts.com/stock/highstock.js"></script> -->
+		<script src="js/highcharts/highcharts.js"></script>
+		<script src="js/highcharts/highcharts-more.js"></script>
+		<script src="js/highcharts/modules/exporting.js"></script>
+		<!-- // <script src="js/highcharts.src.js"></script> -->
+		<script src="js/highcharts-ng.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/services.js"></script>
+        <script src="js/directives.js"></script>
 		<script src="js/controllers.js"></script>
-		
+		<script src="js/dashboard.js"></script>
+
 	<!-- CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/angular.treeview.css" rel="stylesheet" type="text/css" />
+		<link href="css/tree.css" rel="stylesheet" type="text/css" />
 		<link href="css/dashboard.css" rel="stylesheet" type="text/css" />
-	
+
 	</head>
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">DASHBOARD</a>
+					<a class="navbar-brand" href="#">Data Envision <sup>+</sup></a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Dashboard</a></li>
-						<li><a href="#">Settings</a></li>
-						<li><a href="#">Profile</a></li>
-						<li><a href="#">Help</a></li>
+						<li><a href="#/upload"><span class="glyphicon glyphicon-home"></span> Admin Panel</a></li>
+						<!-- <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li> -->
 					</ul>
-					<form class="navbar-form navbar-right">
+					<!-- <form class="navbar-form navbar-right">
 						<input type="text" class="form-control" placeholder="Search...">
-					</form>
+					</form> -->
 				</div>
 			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-3 col-md-2 sidebar" role="navigation">
+		</nav> <!-- /nav -->
+		<div class="container-fluid" ng-controller="DashboardCtrl">
+			<div class="row row-offcanvas row-offcanvas-left">
+				<!-- sidebar -->
+				<div class="col-sm-4 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation" class="tree well">
 					<ul class="nav nav-sidebar">
-						<li class="active"><a href="#">Overview</a></li>
-						<li><a href="#">Reports</a></li>
-						<li><a href="#">Analytics</a></li>
-						<li><a href="#">Export</a></li>
+						<!-- <li ng-repeat ="root in myData.items | filter: rootFilter" id="dynamictree">
+							<a href="#"><i class="glyphicon glyphicon-dashboard"></i><span ng-click="manualId(root)"> {{ root.manualid }} </span></a>
+							<ul ng-show="root.show">
+								<li ng-repeat ="rootchild in myData.items | filter: rootchildFilter" >
+									<a href="#">
+										<i class="glyphicon glyphicon-link"></i>
+										<span ng-click="childmanualId(rootchild, $index)">{{ rootchild.manualid }}</span>
+									</a>
+									<ul ng-show="rootchild.show">
+										<li ng-repeat ="rootchildchild in myData.items | filter: rootchildchildFilter">
+										<a href="#" >
+											<i class="glyphicon glyphicon-link"></i>
+											<span ng-click="grandchildmanualId(rootchildchild, $index)">{{ rootchildchild.manualid }}</span>
+										</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li> -->
+						<li><a href=""><i class="glyphicon glyphicon-dashboard"></i>Metrics</a></li>
+						<ul>
+							<li ng-repeat="(roleIndex,role) in roles">
+								<a href=""><i class="glyphicon glyphicon-link"></i>
+								<span ng-click="selectedRoleId(role, roleIndex)"> {{ role.name }}</span> 
+								</a>
+								<ul>
+									<li ng-repeat="(catalogIndex,catalog) in catalogs" ng-show="isShowingCatalogs(roleIndex)">
+										<a href=""><i class="glyphicon glyphicon-link"></i>
+											<span ng-click="selectedCatalogId(catalog, catalogIndex)"> {{ catalog.name}}</span>
+										</a>
+										<ul>
+											<li ng-repeat="(stageIndex, stage) in stages" ng-show="isShowingStages(catalogIndex)">
+												<a href=""><i class="glyphicon glyphicon-link"></i>
+													<span ng-click="selectedStageId(stage, stageIndex)"> {{ stage.name}}</span>
+												</a>
+												<ul>
+													<li ng-repeat="metric in metrics" ng-show="isShowingMetrics(stageIndex)">
+														<a href="">{{ metric.name}}
+														</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<li><a href="#/charts"><i class="glyphicon glyphicon-picture"></i>  Yearly Temparature</a></li>
+						<li><a href="#/charts2"><i class="glyphicon glyphicon-picture"></i>  Highest vs Lowest Temp.</a></li>
+						<li><a href="#/upload"><i class="glyphicon glyphicon-tasks"></i>  Upload</a></li>
+						<!-- <li><div class="collapse" id="toggleDemo0" style="height: 0px;">
+							<ul class="nav nav-list">
+								<li><a href="">ProfileSubMenu1</a></li>
+								<li><a href="">ProfileSubMenu2</a></li>
+								<li><a href="">ProfileSubMenu3</a></li>
+							</ul>
+						</div></li>
+						<li>
+							<a href="" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
+								<span class="glyphicon glyphicon-cloud"></span> Submenu 1 <span class="caret pull-right"></span>
+							</a>
+							<div class="collapse" id="toggleDemo" style="height: 0px;">
+								<ul class="nav nav-list">
+									<li><a href="">Submenu1.1</a></li>
+									<li><a href="">Submenu1.2</a></li>
+									<li><a href="">Submenu1.3</a></li>
+								</ul>
+							</div>
+						</li> -->
+						<!-- <li>
+							<a href="" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
+								<span class="glyphicon glyphicon-inbox"></span> Submenu 2 <span class="caret pull-right"></span>
+							</a>
+							<div class="collapse" id="toggleDemo2" style="height: 0px;">
+								<ul class="nav nav-list">
+									<li><a href="">Submenu2.1</a></li>
+									<li><a href="">Submenu2.2</a></li>
+									<li><a href="">Submenu2.3</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href=""><span class="glyphicon glyphicon-tasks"></span> Normalmenu</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-hdd"></span> WithBadges <span class="badge pull-right">42</span></a></li>
+						<li><a href=""><span class="glyphicon glyphicon-cog"></span> PreferencesMenu</a></li> -->
 					</ul>
-					<ul class="nav nav-sidebar">
-						<li><a href="">Nav item</a></li>
-						<li><a href="">Nav item again</a></li>
-						<li><a href="">One more nav</a></li>
-						<li><a href="">Another nav item</a></li>
-						<li><a href="">More navigation</a></li>
-					</ul>
-					<ul class="nav nav-sidebar">
-						<li><a href="">Nav item again</a></li>
-						<li><a href="">One more nav</a></li>
-						<li><a href="">Another nav item</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-					<h1 class="page-header">Dashboard</h1>
-					<div class="row placeholders">
-						<div class="col-xs-6 col-sm-3 placeholder">
-							<h4>Label</h4>
-							<span class="text-muted">Something</span>
-						</div>
-						<div class="col-xs-6 col-sm-3 placeholder">
-							<h4>Label</h4>
-							<span class="text-muted">Something</span>
-						</div>
-						<div class="col-xs-6 col-sm-3 placeholder">
-							<h4>Label</h4>
-							<span class="text-muted">Something</span>
-						</div>
-						<div class="col-xs-6 col-sm-3 placeholder">
-							<h4>Label</h4>
-							<span class="text-muted">Something</span>
-						</div>
-					</div>
+				</div>	<!--/span-->		
+			 <!-- main content -->
+				<div class="col-sm-8 col-md-9 main">
+				<!--toggle sidebar button-->
+					<p class="visible-xs">
+						<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+					</p>
+
+					<h1 class="page-header">
+						<span></span>
+						<!-- <p class="lead">(Metric Charts)</p> -->
+					</h1>
+
 					<div ng-view></div>
-				</div>
+				</div><!--/row-->
 			</div>
-		</div>
+		</div> <!-- /.conatiner -->
+		<footer>
+			<p class="pull-right">©Map Builder 2014</p>
+		</footer>
 	</body>
 </html>
