@@ -1,0 +1,6 @@
+%% Migration: add_metric
+
+{add_metric,
+  fun(up) -> undefined;
+     (down) -> undefined
+  end}.

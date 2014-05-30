@@ -3,99 +3,75 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dashboard</title>
+		<title>Data Envision</title>
 	
-	<!-- scripts -->
-        <script src="js/jquery-2.1.1.min.js"></script>
-		<script src="lib/angular/angular.min.js"></script>
-		<script src="lib/angular/angular-route.js"></script>
-		<script src="lib/angular/angular-route.min.js"></script>
-		<!-- // <script src="lib/angular/angular-route.min.js.map"></script> -->
-		<script src="lib/angular/angular-cookies.min.js"></script>
-		<script src="lib/angular/angular-resource.min.js"></script>
-		<script src="lib/angular/angular-loader.min.js"></script>
-		<!-- // <script src="lib/angular/angular-sanitize.min.js"></script> -->
-		<!-- // <script src="lib/angular/angular-mocks.js"></script> -->
-		<script src="lib/angular/ng-upload.js"></script>
-		<script src="lib/angular/angular.treeview.js"></script>
-		<!-- // <script src="lib/angular/abn_tree_directive.js"></script> -->
-        <script src="js/bootstrap.js"></script>
-		<script src="js/dropdown.js"></script>
-		<script src="js/ngTree.js"></script>
-		<script src="js/onReadFile.js"></script>
-
-	<!-- 	// <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-		<!-- // <script src="http://code.highcharts.com/stock/highstock.src.js"></script> -->
-		<!-- // <script src="http://code.highcharts.com/stock/highstock.js"></script> -->
-		<script src="js/highcharts/highcharts.js"></script>
-		<script src="js/highcharts/highcharts-more.js"></script>
-		<script src="js/highcharts/modules/exporting.js"></script>
-		<!-- // <script src="js/highcharts.src.js"></script> -->
-		<script src="js/highcharts-ng.min.js"></script>
-		<script src="js/app.js"></script>
-		<script src="js/services.js"></script>
-        <script src="js/directives.js"></script>
-		<script src="js/controllers.js"></script>
-		<script src="js/dashboard.js"></script>
+	
 
 	<!-- CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-		<link href="css/angular.treeview.css" rel="stylesheet" type="text/css" />
-		<link href="css/tree.css" rel="stylesheet" type="text/css" />
-		<link href="css/dashboard.css" rel="stylesheet" type="text/css" />
-
+		<!-- <link href="css/angular.treeview.css" rel="stylesheet" type="text/css" /> -->
+		<!-- <link href="css/tree.css" rel="stylesheet" type="text/css" /> -->
+		<!-- <link href="css/dashboard.css" rel="stylesheet" type="text/css" /> -->
+		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<!-- Ionicons -->
+		<link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+		<!-- Theme style -->
+		<link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
 	</head>
-	<body>
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Data Envision <sup>+</sup></a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#/upload"><span class="glyphicon glyphicon-home"></span> Admin Panel</a></li>
-						<!-- <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li> -->
-					</ul>
-					<!-- <form class="navbar-form navbar-right">
-						<input type="text" class="form-control" placeholder="Search...">
-					</form> -->
-				</div>
-			</div>
-		</nav> <!-- /nav -->
-		<div class="container-fluid" ng-controller="DashboardCtrl">
-			<div class="row row-offcanvas row-offcanvas-left">
-				<!-- sidebar -->
-				<div class="col-sm-4 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation" class="tree well">
-					<ul class="nav nav-sidebar">
-						<!-- <li ng-repeat ="root in myData.items | filter: rootFilter" id="dynamictree">
-							<a href="#"><i class="glyphicon glyphicon-dashboard"></i><span ng-click="manualId(root)"> {{ root.manualid }} </span></a>
-							<ul ng-show="root.show">
-								<li ng-repeat ="rootchild in myData.items | filter: rootchildFilter" >
-									<a href="#">
-										<i class="glyphicon glyphicon-link"></i>
-										<span ng-click="childmanualId(rootchild, $index)">{{ rootchild.manualid }}</span>
-									</a>
-									<ul ng-show="rootchild.show">
-										<li ng-repeat ="rootchildchild in myData.items | filter: rootchildchildFilter">
-										<a href="#" >
-											<i class="glyphicon glyphicon-link"></i>
-											<span ng-click="grandchildmanualId(rootchildchild, $index)">{{ rootchildchild.manualid }}</span>
-										</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li> -->
-						<li><a href=""><i class="glyphicon glyphicon-dashboard"></i>Metrics</a></li>
+
+	<!DOCTYPE html>
+
+    <body class="skin-blue">
+        <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            <a href="#" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                Data Envision  <sup>+</sup>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    
+                </div>
+            </nav>
+        </header>
+        <div class="wrapper row-offcanvas row-offcanvas-left" ng-controller="DashboardCtrl">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">                
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                        </div>
+                        <div class="pull-left info">
+                            <p>Hello, User</p>
+
+                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        </div>
+                    </div>
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <span class="input-group-btn">
+                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li><a href=""><i class="glyphicon glyphicon-dashboard"></i> Metrics </a></li>
 						<ul>
 							<li ng-repeat="(roleIndex,role) in roles">
 								<a href=""><i class="glyphicon glyphicon-link"></i>
@@ -127,60 +103,63 @@
 						<li><a href="#/charts"><i class="glyphicon glyphicon-picture"></i>  Yearly Temparature</a></li>
 						<li><a href="#/charts2"><i class="glyphicon glyphicon-picture"></i>  Highest vs Lowest Temp.</a></li>
 						<li><a href="#/upload"><i class="glyphicon glyphicon-tasks"></i>  Upload</a></li>
-						<!-- <li><div class="collapse" id="toggleDemo0" style="height: 0px;">
-							<ul class="nav nav-list">
-								<li><a href="">ProfileSubMenu1</a></li>
-								<li><a href="">ProfileSubMenu2</a></li>
-								<li><a href="">ProfileSubMenu3</a></li>
-							</ul>
-						</div></li>
-						<li>
-							<a href="" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
-								<span class="glyphicon glyphicon-cloud"></span> Submenu 1 <span class="caret pull-right"></span>
-							</a>
-							<div class="collapse" id="toggleDemo" style="height: 0px;">
-								<ul class="nav nav-list">
-									<li><a href="">Submenu1.1</a></li>
-									<li><a href="">Submenu1.2</a></li>
-									<li><a href="">Submenu1.3</a></li>
-								</ul>
-							</div>
-						</li> -->
-						<!-- <li>
-							<a href="" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
-								<span class="glyphicon glyphicon-inbox"></span> Submenu 2 <span class="caret pull-right"></span>
-							</a>
-							<div class="collapse" id="toggleDemo2" style="height: 0px;">
-								<ul class="nav nav-list">
-									<li><a href="">Submenu2.1</a></li>
-									<li><a href="">Submenu2.2</a></li>
-									<li><a href="">Submenu2.3</a></li>
-								</ul>
-							</div>
-						</li>
-						<li><a href=""><span class="glyphicon glyphicon-tasks"></span> Normalmenu</a></li>
-						<li><a href=""><span class="glyphicon glyphicon-hdd"></span> WithBadges <span class="badge pull-right">42</span></a></li>
-						<li><a href=""><span class="glyphicon glyphicon-cog"></span> PreferencesMenu</a></li> -->
-					</ul>
-				</div>	<!--/span-->		
-			 <!-- main content -->
-				<div class="col-sm-8 col-md-9 main">
-				<!--toggle sidebar button-->
-					<p class="visible-xs">
-						<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">                
+                <!-- Main content -->
+                <section class="content">
+                	<div ng-view></div>
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+		<!-- <div id="footer" class="container">
+			<nav class="navbar navbar-default navbar-fixed-bottom">
+				<div class="navbar-inner navbar-content-center">
+					<p class="text-muted credit">
+						© 2014 Data Envision<sup>+</sup>. All Rights Reserved to <a href="http://www.qubitinformationsystems.com/">Qubit Information Systems.</a> LLC.
 					</p>
+				</div>
+			</nav>
+		</div> -->
 
-					<h1 class="page-header">
-						<span></span>
-						<!-- <p class="lead">(Metric Charts)</p> -->
-					</h1>
+		<!-- jQuery 2.0.2 -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <!-- scripts -->
+        <script src="js/jquery-2.1.1.min.js"></script>
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/angular/angular-route.js"></script>
+		<script src="lib/angular/angular-route.min.js"></script>
+		<!-- // <script src="lib/angular/angular-route.min.js.map"></script> -->
+		<script src="lib/angular/angular-cookies.min.js"></script>
+		<script src="lib/angular/angular-resource.min.js"></script>
+		<script src="lib/angular/angular-loader.min.js"></script>
+		<!-- // <script src="lib/angular/angular-sanitize.min.js"></script> -->
+		<!-- // <script src="lib/angular/angular-mocks.js"></script> -->
+		<script src="lib/angular/ng-upload.js"></script>
+		<script src="lib/angular/angular.treeview.js"></script>
+		<!-- // <script src="lib/angular/abn_tree_directive.js"></script> -->
+        <script src="js/bootstrap.js"></script>
+		<script src="js/dashboard.js"></script>
+		<script src="js/dropdown.js"></script>
+		<script src="js/ngTree.js"></script>
+		<script src="js/onReadFile.js"></script>
 
-					<div ng-view></div>
-				</div><!--/row-->
-			</div>
-		</div> <!-- /.conatiner -->
-		<footer>
-			<p class="pull-right">©Map Builder 2014</p>
-		</footer>
+	<!-- 	// <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+		<!-- // <script src="http://code.highcharts.com/stock/highstock.src.js"></script> -->
+		<!-- // <script src="http://code.highcharts.com/stock/highstock.js"></script> -->
+		<script src="js/highcharts/highcharts.js"></script>
+		<script src="js/highcharts/highcharts-more.js"></script>
+		<script src="js/highcharts/modules/exporting.js"></script>
+		<!-- // <script src="js/highcharts.src.js"></script> -->
+		<script src="js/highcharts-ng.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/services.js"></script>
+        <script src="js/directives.js"></script>
+		<script src="js/controllers.js"></script>
 	</body>
 </html>

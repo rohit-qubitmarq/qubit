@@ -1,0 +1,2 @@
+-module(operational_sla, [Id, Sla_level::integer(), Current_year::string(), Last_year::string(), Sla_low_range::string(), Sla_high_range::string()]).
+-compile(export_all).

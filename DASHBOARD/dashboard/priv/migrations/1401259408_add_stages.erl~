@@ -1,0 +1,6 @@
+%% Migration: add_stages
+
+{add_stages,
+  fun(up) -> undefined;
+     (down) -> undefined
+  end}.

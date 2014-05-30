@@ -11,13 +11,14 @@
 # -------------------------------------------------------------------
 
 do_start () {
-    if test $(echo "$1" | grep ERROR > /dev/null;echo $?) -eq 0
+    if test $(echo "$1"|grep "^exec erl"> /dev/null;echo $?) -eq 0
     then
-        echo "$1"
+        eval "$1"
     else
-        eval $1
+        echo "$1"
     fi
 }
+
 
 cd `dirname $0`
 
@@ -57,9 +58,17 @@ case "${1:-''}" in
         $0 stop
         $0 start
         ;;
+
+  'attach')
+        # Boss attach running system's console
+        echo "Connecting production system..."
+        ATTACH=$(./rebar boss c=attach_cmd|grep -v "==>")
+        do_start "$ATTACH"
+        ;;
+
   *)
         echo "Chicago Boss Boot System"
-        echo "Usage: $SELF start|start-dev|stop|reload|restart"
+        echo "Usage: $SELF start|start-dev|stop|reload|restart|attach"
         exit 1
         ;;
 esac

@@ -2,82 +2,6 @@ function DashboardCtrl($scope, $http, $location, $routeParams, $route, LoginServ
 
 	var config = {headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}};
 
-	$http.get('/metricdashboard/get_tree').success(function(data){
-		$scope.tree = data.tree;
-		$scope.jsonTree = angular.toJson($scope.tree);
-		
-		// var parent = $scope.tree.parent;
-		// console.log($scope.tree);
-		
-		// $scope.getNestedChildren = function getNestedChildren(jsonTree, parent) {
-		// 	var out = [];
-		// 	console.log(jsonTree);
-		// 	for (var i in jsonTree) {
-		// 		if(jsonTree[i].parent == parent){
-		// 			var children = getNestedChildren(jsonTree, jsonTree[i].manualid);
-		// 			console.log(children);
-
-		// 			if(children.length) {
-		// 				jsonTree[i].children = children;
-		// 			}
-		// 			out.push(jsonTree[i]);
-		// 		}
-		// 	}
-		// 	return out;
-		// };
-		// console.log($scope.getNestedChildren);
-
-
-		$scope.myData = {};
-		$scope.myData.items =  $scope.tree;
-
-		$scope.rootFilter = function(item){
-			if(item.parent == "") return true;
-			return false;
-		};
-
-		$scope.manualId = function(root){
-			console.log(root.manualid);
-			$scope.rootchildFilter = function(item) {
-				if(root.manualid == item.parent) 
-					return true;
-			};
-			root.show = true;
-		};
-
-		$scope.childmanualId = function(rootchild, $index){
-			console.log(rootchild.manualid + " and selected idex is === " + $index);
-			$scope.rootchildchildFilter = function(item) {
-				if(rootchild.manualid == item.parent) return true;
-			};
-			rootchild.show = true;
-		};
-		$scope.grandchildmanualId = function(rootchildchild, $index){
-			console.log(rootchildchild.manualid + " and selected idex is === " + $index);
-
-			$scope.grandchildFilter = function(item) {
-				if(item.parent == rootchildchild.manualid) return true;
-				if (item.parent == "") return false;
-			};
-			rootchildchild.show = true;
-		};
-
-		// for (var i=0; i< $scope.tree.length; i++) {
-		// 	$scope.treemanualid.push($scope.tree[i].manualid);
-		// 	$scope.treename.push($scope.tree[i].name);
-		// 	$scope.treeparent.push($scope.tree[i].parent);
-		// 	$scope.tree.manualid = $scope.tree[i].manualid;
-		// 	$scope.tree.name = $scope.tree[i].name;
-		// 	$scope.tree.parent = $scope.tree[i].parent;
-		// 	var items = [{"id":$scope.treemanualid, "Name": $scope.treename, "Parent": $scope.treeparent}];
-		// 	return items;
-		// };
-
-			// console.log($scope.tree);
-			// console.log($scope.treemanualid);
-			// console.log($scope.treename);
-			// console.log($scope.treeparent);
-	});
 // retrieve Roles list
 	$http.get('/metricdashboard/get_roles').success(function(data){
 		$scope.roles = data.roles;
@@ -130,145 +54,6 @@ function DashboardCtrl($scope, $http, $location, $routeParams, $route, LoginServ
 			};
 		};
 	};
-
-// retieve Catalog list
-// 	$http.get('/metricdashboard/get_catalog').success(function(data){
-// 		$scope.catalogs = data.catalogs;
-// 		for (var i=0; i< $scope.catalogs.length; i++) {
-// 			$scope.catalogs.name = $scope.catalogs[i].name;
-// 			// console.log("catalog=" + $scope.catalogs[i].name);
-// 		};
-// 	});
-
-
-
-// // retrieve Stages list
-// 	$http.get('/metricdashboard/get_stages').success(function(data){
-// 		$scope.stages = data.stages;
-// 		for (var i=0; i< $scope.stages.length; i++) {
-// 			$scope.stages.name = $scope.stages[i].name;
-// 			// console.log("stages==" + $scope.stages[i].name);
-// 		};
-// 	});
-
-// // retrieve Metrics list
-// 	$http.get('/metricdashboard/get_metrics').success(function(data){
-// 		$scope.metrics = data.metrics;
-// 		for (var i=0; i< $scope.metrics.length; i++) {
-// 			$scope.metrics.name = $scope.metrics[i].name;
-// 			// console.log("metrics===" + $scope.metrics[i].name);
-// 		};
-// 	});
-
-	// console.log($scope.catalogs);
-// __________________________________________________________________________________________________________________________________________________
-// retrieve roles for a particular catalog
-// 	$scope.catalogId = $routeParams.catalogId;
-// 	// console.log($scope.catalogId);
-
-// 	var catalogroles = "id=" + $scope.catalogId;
-// 	$http.post('/metricdashboard/catalog_roles', catalogroles, config).success(function(data) {
-// 		$scope.rolesid = data.rolesid;
-// 		$scope.rolesnames = [];
-// 			for (var i=0; i< $scope.rolesid.length; i++) {
-// 				$scope.rolesid.roles_id = $scope.rolesid[i].roles_id;
-
-// 				// console.log(" id for all roles=:--->" + $scope.rolesid.roles_id);
-
-// 				var rolesids = "id=" + $scope.rolesid.roles_id;
-// 				console.log(rolesids);
-// 				$http.post('/metricdashboard/roles_names', rolesids, config).success(function(data){
-// 					$scope.rolesnames.push(data.rolenames[0]);
-// 					console.log($scope.rolesnames);
-// 				});
-// 			};			
-// 	});
-
-// 	$scope.selectedCatalog = {};
-
-// 	$scope.get_roles = function(id){
-// 		$scope.selectedCatalog.id = id;
-// 	};
-
-// 	var selectedCatalogid  = "id=" + $routeParams.catalogId;
-//  	$http.post('/metricdashboard/catalog_names', selectedCatalogid, config).success(function(data) {
-//  		$scope.catalogname = data.catalogname;
-//  		// console.log($scope.catalogname)
-//  	});
-// //__________________________________________________________________________________________________________________________________________________________
-// // retrieve stages for a particular role
-// 	$scope.roleId = $routeParams.roleId;
-
-// 	var rolestages = "id=" + $scope.roleId;
-// 	$http.post('/metricdashboard/role_stages', rolestages, config).success(function(data) {
-// 		$scope.stagesid = data.stagesid;
-// 		$scope.names = [];
-// 			for (var i=0; i< $scope.stagesid.length; i++) {
-// 				$scope.stagesid.stages_id = $scope.stagesid[i].stages_id;
-// 				console.log(" id for all stages=:--->" + $scope.stagesid.stages_id);
-
-// 				//retieve name for corresponding retreived all stages id from model/collection "role_stages"
-
-// 				var stagesids = "id=" + $scope.stagesid.stages_id;
-// 				$http.post('/metricdashboard/stages_names', stagesids, config).success(function(data){
-// 					$scope.names.push(data.stagesnames[0]);
-// 					console.log($scope.names);
-// 				});
-// 			};			
-// 	});
-
-// 	$scope.selectedRole = {};
-
-// 	$scope.get_stages = function(id){
-// 		$scope.selectedRole.id = id;
-// 		console.log($scope.selectedRole.id);
-// 	};
-
-// 	// console.log($routeParams.roleId);
-// 	// console.log($route);
-
-// 	var slectedroleid  = "id=" + $routeParams.roleId;
-//  	$http.post('/metricdashboard/role_name', slectedroleid, config).success(function(data) {
-//  		$scope.rolename = data.rolename;
-//  		// console.log($scope.rolename)
-//  	});
-
- 	
-// //_________________________________________________________________________________________________________________________________________________________
-// // retrieve metrics and names for corresponding stage
-// 	$scope.stageId = $routeParams.stageId;
-
-// 	var stagemetrics = "id=" + $scope.stageId;
-// 	$http.post('/metricdashboard/stage_metrics', stagemetrics, config).success(function(data) {
-// 		$scope.metricid = data.metricid;
-// 		$scope.metricnames = [];
-// 			for (var i=0; i< $scope.metricid.length; i++) {
-// 				$scope.metricid.metric_id = $scope.metricid[i].metric_id;
-				
-// 				console.log(" id for all METRCIS=:--->" + $scope.metricid.metric_id);
-
-// 				//retieve name for corresponding retreived all stages id from model/collection "role_stages"
-
-// 				var metricids = "id=" + $scope.metricid.metric_id;
-// 				$http.post('/metricdashboard/metrics_names', metricids, config).success(function(data){
-// 					$scope.metricnames.push(data.metricnames[0]);
-// 					console.log($scope.metricnames);
-// 				});
-// 			};			
-// 	});
-
-// 	$scope.selectedStage = {};
-
-// 	$scope.get_metrics = function(id){
-// 		$scope.selectedStage.id = id;
-// 		console.log($scope.selectedStage.id);
-// 	};
-
-// 	var slectedstageid  = "id=" + $routeParams.stageId;
-//  	$http.post('/metricdashboard/stage_name', slectedstageid, config).success(function(data) {
-//  		$scope.stagename = data.stagename;
-//  		// console.log($scope.stagename)
-//  	});
 
 //____________________________________________________________________________________________________________________________________________________________
 //function for Registering person 
@@ -388,7 +173,7 @@ function ChartCtrl($scope, $http, $location, $routeParams) {
 					marginLeft: 60
 				},
 				title: {
-					text: 'Yearly Highest Temperature',
+					text: 'Yearly Highest Vs Lowest Temperature',
 					x: 10 //center	
 				},
 				subtitle: {
@@ -456,6 +241,146 @@ function ChartCtrl($scope, $http, $location, $routeParams) {
 			});
 		});
 	});
+
+
+// Chart for SLA-1 HR Opearational Metric
+	$http.get('/metricdashboard/operational_sla1').success(function(data) {
+		$scope.sla1 = data.sla1;
+		$scope.current_year =[];
+		$scope.last_year = [];
+		$scope.sla_low_range= [];
+		$scope.sla_high_range = [];
+		// console.log($scope.sla1[1].coords);
+		for (var i=0; i< $scope.sla1.length; i++) {
+			$scope.current_year.push($scope.sla1[i].current_year);
+			$scope.last_year.push($scope.sla1[i].last_year);
+			$scope.sla_low_range.push($scope.sla1[i].sla_low_range);
+			$scope.sla_high_range.push($scope.sla1[i].sla_high_range);
+		};
+		var currentYear = $scope.current_year;
+		var lastYear = $scope.last_year;
+		var lowRange = $scope.sla_low_range;
+		var highRange = $scope.sla_high_range;
+
+		$(function () {
+        $('#containerSLA1').highcharts({
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Opearational SLAs'
+            },
+            subtitle: {
+                text: 'SLA 1 - Responsiveness'
+            },
+            xAxis: [{
+                categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', 
+                '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
+                '21', '22', '23', '24', '25', '26', '27', '28', '29', '30',
+                '31', '32', '33', '34', '35', '36', '37', '38', '39', '40',
+                '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52']
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    format: '{value}%',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                },
+                title: {
+                    text: 'Temperature',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                }
+            }, { // Secondary yAxis
+                title: {
+                    text: 'Rainfall',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                labels: {
+                    format: '{value} mm',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                opposite: true
+            }],
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                x: 120,
+                verticalAlign: 'top',
+                y: 100,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            },
+            series: [{
+                name: 'Rainfall',
+                type: 'column',
+                yAxis: 1,
+                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                tooltip: {
+                    valueSuffix: ' mm'
+                }
+    
+            }, {
+                name: 'Temperature',
+                type: 'spline',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+                tooltip: {
+                    valueSuffix: '°C'
+                }
+            }]
+        });
+    	});
+	});
+
+
+// Chart for SLA-2 HR Opearational Metric
+	$http.get('/metricdashboard/operational_sla2').success(function(data) {
+		$scope.sla2 = data.sla2;
+		$scope.current_year =[];
+		$scope.last_year = [];
+		$scope.sla_low_range= [];
+		$scope.sla_high_range = [];
+		// console.log($scope.sla1[1].coords);
+		for (var i=0; i< $scope.sla2.length; i++) {
+			$scope.current_year.push($scope.sla2[i].current_year);
+			$scope.last_year.push($scope.sla2[i].last_year);
+			$scope.sla_low_range.push($scope.sla2[i].sla_low_range);
+			$scope.sla_high_range.push($scope.sla2[i].sla_high_range);
+		};
+		var currentYear = $scope.current_year;
+		var lastYear = $scope.last_year;
+		var lowRange = $scope.sla_low_range;
+		var highRange = $scope.sla_high_range;
+	});
+
+// Chart for SLA-3 HR Opearational Metric
+	$http.get('/metricdashboard/operational_sla3').success(function(data) {
+		$scope.sla3 = data.sla3;
+		$scope.current_year =[];
+		$scope.last_year = [];
+		$scope.sla_low_range= [];
+		$scope.sla_high_range = [];
+		// console.log($scope.sla1[1].coords);
+		for (var i=0; i< $scope.sla3.length; i++) {
+			$scope.current_year.push($scope.sla3[i].current_year);
+			$scope.last_year.push($scope.sla3[i].last_year);
+			$scope.sla_low_range.push($scope.sla3[i].sla_low_range);
+			$scope.sla_high_range.push($scope.sla3[i].sla_high_range);
+		};
+		var currentYear = $scope.current_year;
+		var lastYear = $scope.last_year;
+		var lowRange = $scope.sla_low_range;
+		var highRange = $scope.sla_high_range;
+	});
 }
 
 //______________File Upload CONTROLLER___________________
@@ -489,62 +414,35 @@ function FileUploadCtrl($scope, $http, $cookieStore, $location, $routeParams, $r
 	};
 };
 
-// $http({
-				// 	url: '/metricdashboard/store_rdks',
-				// 	method: 'POST',
-				// 	data: storeData,
-				// 	headers: config
-				// }).success(function(data, status, headers, config){
-				// 	console.log('Success: ', data, status, headers, config);
+//______________HR Metric Upload CONTROLLER___________________
 
-				// });
+function MetricUploadCtrl($scope, $http, $cookieStore, $location, $routeParams, $route, $resource) {
+	var config = {headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}};
 
-// var Url = "/static/dashboard/Uploadedfiles/sample2.csv"
-		// $http.get(Url).then(function(response){
-		// 	var json = $.csv.toObjects(response.data);
-		// 	console.log(json);
-		// 	return json;
-		// });
-		// return Items;
-		// console.log(Items);
-		// $scope.response = JSON.parse(content);
-		// console.log($scope.response);
-
-		// $scope.complete = function(content) {
-		// $location.path("charts");
-		// $http({
-		// 	method: 'GET',
-		// 	url: "/static/dashboard/Uploadedfiles/sample2.csv",
-		// 	transformResponse: function(content) {
-		// 		// Transform CSV file into a JSON object
-		// 		var json = $.csv.toObjects(content);
-		// 		return json;
-		// 	},
-		// 	cache: true,
-		// })
-		// .success(function(content, status) {
-		// 	$scope.content = content;
-		// 	console.log($scope.content);
-
-		// 	for (var i=0; i< $scope.content.length; i++) {
-				
-		// 		$scope.Coords = $scope.content[i].Coords;
-		// 		$scope.Dates = $scope.content[i].Date;
-		// 		$scope.Hightemp = $scope.content[i].Hightemp;
-		// 		$scope.Lowtemp = $scope.content[i].Lowtemp;
-
-		// 		var storeData = "date=" + $scope.Dates + "&coords=" + $scope.Coords + "&hightemp=" + $scope.Hightemp + "&lowtemp=" + $scope.Lowtemp;
-				
-		// 		console.log(storeData);
-				
-		// 		$http.post('/metricdashboard/store_rdks', storeData, config).success(function(data) {
-		// 		});
-		// 	};
-		// 	// $location.path("charts");
-
-		// })
-		// .error(function(data, status) {
-		// 	$scope.content = content || "Request failed";
-		// });
-	// };
+	$scope.showContent = function($fileContent){
+		$scope.content = $fileContent;
+		$scope.jsonData = $.csv.toObjects($fileContent);
+		$scope.jsonContent = $scope.jsonData;
 		
+		console.log($scope.jsonData);
+		
+		for (var i=0; i< $scope.jsonData.length; i++) {
+			$scope.Sla_level = $scope.jsonData[i].Sla_level;
+			$scope.Current_year = $scope.jsonData[i].Current_year;
+			$scope.Last_year = $scope.jsonData[i].Last_year;
+			$scope.Sla_low_range = $scope.jsonData[i].Sla_low_range;
+			$scope.Sla_high_range = $scope.jsonData[i].Sla_high_range;
+
+			var store_operational_Data = "sla_level=" + $scope.Sla_level + "&current_year=" + $scope.Current_year
+							+ "&last_year=" + $scope.Last_year + "&sla_low_range=" + $scope.Sla_low_range
+							+ "&sla_high_range=" + $scope.Sla_high_range;
+
+			$http.post('/metricdashboard/store_operational_sla', store_operational_Data, config).success(function(data) {
+			});
+		};
+	};
+
+	$scope.complete = function(content) {
+		$location.path("charts");
+	};
+};			

@@ -1,0 +1,20 @@
+<h1 class="page-header">
+	<span>Upload HR Metrics</span>
+</h1>
+
+<div ng-app="app">
+	<div ng-controller="MetricUploadCtrl">
+		<form name="upload" action="/metricdashboard/uploads" ng-upload="complete(contents)">
+			<input type="file" name="metric" on-read-file="showContent($fileContent)"></input>
+			<div ng-if="content">
+				<h2>File Contents</h2>
+				<pre>{{ content }}</pre><br/><hr/>
+				<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+			</div>
+			<br/>
+			<input class="btn btn-success" type="submit" value="Upload" upload-submit></input>
+			<!-- <a href='javascript:void(0)' class="upload-submit"> Upload </a> -->
+		</form>
+	</div>
+</div>
+<script src="js/jquery.csv-0.71.min.js"></script>

@@ -1,0 +1,6 @@
+%% Migration: add_roles
+
+{add_roles,
+  fun(up) -> undefined;
+     (down) -> undefined
+  end}.

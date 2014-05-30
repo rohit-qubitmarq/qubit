@@ -1,0 +1,6 @@
+%% Migration: add_catalog
+
+{add_catalog,
+  fun(up) -> undefined;
+     (down) -> undefined
+  end}.

@@ -118,19 +118,45 @@ register_person('POST',[]) ->
 store_rdks('GET', []) ->
 	{output, []};
 store_rdks('POST',[]) ->
-% io:format("dates = ~p~n",[Req:post_param("date")]),
-% io:format("coords = = ~p~n",[Req:post_param("coords")]),
-% io:format("higdtemp = = = ~p~n",[Req:post_param("hightemp")]),
-% io:format("lowtemp = = = = ~p~n",[Req:post_param("lowtemp")]).
-	Storerdks = boss_record:new(rdks, [
+	Store_rdks = boss_record:new(rdks, [
 					{date ,Req:post_param("date")},
 					{coords ,Req:post_param("coords")},
 					{hightemp, Req:post_param("hightemp")},
 					{lowtemp, Req:post_param("lowtemp")}
 				]),
-	{ok, Storedrdks} = Storerdks:save(),
-	{json, [{storedrdks,Storerdks}]}.
+	{ok, Savedrdks} = Store_rdks:save(),
+	{json, [{storedrdks,Savedrdks}]}.
 
+% Metric HR uploads
+store_operational_sla('GET', []) ->
+	{output, []};
+store_operational_sla('POST', [] ) ->
+	Store_operational_sla = boss_record:new(operational_sla, [
+								{sla_level, list_to_integer(Req:post_param("sla_level"))},
+								{current_year, Req:post_param("current_year")},
+								{last_year, Req:post_param("last_year")},
+								{sla_low_range, Req:post_param("sla_low_range")},
+								{sla_high_range, Req:post_param("sla_high_range")}
+		]),
+	{ok, Saved_operational_sla} = Store_operational_sla:save(),
+	{json, [{operational_hr_metric,Saved_operational_sla}]}.
+
+operational_sla1('GET', []) ->
+	Sla1 = boss_db:find(operational_sla, [{sla_level, 'equals' , list_to_integer("1")}]),
+	io:format("SLA1! ~p~n", [Sla1]),
+	{ json, [ { sla1, Sla1 } ] }.
+
+
+operational_sla2('GET', []) ->
+	Sla2 = boss_db:find(operational_sla, [{sla_level, 'equals' , list_to_integer("2")}]),
+	io:format("SLA1! ~p~n", [Sla2]),
+	{ json, [ { sla2, Sla2 } ] }.
+
+
+operational_sla3('GET', []) ->
+	Sla3 = boss_db:find(operational_sla, [{sla_level, 'equals' , list_to_integer("3")}]),
+	io:format("SLA1! ~p~n", [Sla3]),
+	{ json, [ { sla3, Sla3 } ] }.
 
 
 uploads('GET', []) ->
@@ -177,9 +203,7 @@ find_stages('POST', []) ->
 find_metrics('GET', []) ->
 	{output, []};
 find_metrics('POST', []) ->
-	io:format("posted id ~p~n",[ Req:post_param("id")]),
 	Stage_metrics = boss_db:find(metric, [{stages_id, 'equals', Req:post_param("id") }]),
-	io:format("return values for corresponding id ==>> ~p~n",[Stage_metrics]),
 	{json, [{metrics, Stage_metrics}]}.
 
 

@@ -1,0 +1,6 @@
+%% Migration: add_rdks
+
+{add_rdks,
+  fun(up) -> undefined;
+     (down) -> undefined
+  end}.
