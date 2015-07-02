@@ -1,4 +1,4 @@
--module(booksplaza_10_bcrypt).
+-module(dashboard_10_bcrypt).
 
 -export([init/0, stop/0]).
 

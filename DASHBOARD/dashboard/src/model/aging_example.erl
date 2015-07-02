@@ -1,0 +1,2 @@
+-module(aging_example, [Id, Group::string(), TypeOfAction::string(), Values::integer()]).
+-compile(export_all).

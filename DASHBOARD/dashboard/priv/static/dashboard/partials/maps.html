@@ -1,0 +1,62 @@
+<body ng-app>
+<section class="content-header">
+	<h3 align="center">Highmaps: US Forest Service Regions</h3>
+</section>
+<div class="row">
+	<!-- Left col -->
+	<section class="col-lg-6 connectedSortable"> 
+		<!-- Box (with bar chart) -->
+		<div class="box box-danger">
+			<div class="box-header">
+				<!-- tools box -->
+				<div class="pull-right box-tools">
+					<button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+					<button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+					<button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+				</div><!-- /. tools -->
+				<i class="fa fa-picture-o"></i>
+				<h3 class="box-title">Annual Prescribed Burning Area</h3>
+			</div><!-- /.box-header -->
+			<div class="box-body no-padding">
+				<div class="row">
+					<div class="col-sm-12">
+					<!-- bar chart -->
+						<a href="#/mapsregion">
+							<div id="containermap3" ng-controller="MapsCtrl">
+							</div>
+						</a>
+					</div>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->  
+		</div>      
+	</section><!-- /.Left col -->
+
+	<section class="col-lg-6 connectedSortable">
+		<div class="box box-primary">
+			<div class="box-header">
+				<!-- tools box -->
+				<div class="pull-right box-tools">                                        
+					<button class="btn btn-primary btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+					<button class="btn btn-primary btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+					<button class="btn btn-primary btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+				</div><!-- /. tools -->
+				<i class="fa fa-picture-o"></i>
+				<h3 class="box-title">US Forest Service Regions States</h3>
+			</div>
+			<div class="box-body no-padding">
+				<div class="row">
+					<div class="col-sm-12">
+					<!-- bar chart -->
+						<a href="#/mapsregionstates">
+							<div id="containermap2" ng-controller="MapsCtrl1">
+							</div>
+						</a>
+					</div>
+				</div><!-- /.box-body -->
+			</div><!-- /.box-body-->
+		</div>
+	</section><!-- /.Left col -->
+</div>
+<script src="js/adminLTE/app.js"></script>
+</body>
+<script src="js/adminLTE/demo.js"></script>

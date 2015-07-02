@@ -1,0 +1,44 @@
+<section class="content" ng-controller="ChartCtrl">
+	<h1 class="page-header">
+		<span>Hiring Manager</span>
+		<!-- <p class="lead">(Metric Charts)</p> -->
+	</h1>
+	
+	<div class="main_chartcontainer" id="hiring_manager"  style="height: 500px" >
+	</div>
+	<div class="box" >
+		<div class="box-header">
+			<div class="box-header">
+				<h3 class="box-title" ng-repeat="name in orgName"><b>{{ name.organization }} :</b></h3>                                    
+			</div>
+			<div class="box-body table-responsive">
+				<table id="hiringTable" class="table table-bordered table-hover" >
+					<tbody>
+						<tr>
+							<th>Point of Contact</th>
+							<th>Current Status / Milestone</th>
+							<th>Position Title</th>
+							<th>SF52 Number</th>
+							<th>Number of Records</th>
+						</tr>
+						<tr ng-repeat="x in selectedHiring">
+							<td > {{ x.point_of_contact }}</td>
+							<td > {{ x.current_status_milestone }}</td>
+							<td > {{ x.position_title }}</td>
+							<td > {{ x.sf52_number }}</td>
+							<td > {{ x.number_of_records }}</td>
+						</tr>
+					</tbody>
+					<!-- <tfoot>
+						<tr>
+							<th>Point of Contact</th>
+							<th>Current Status / Milestone</th>
+							<th>Position Title</th>
+							<th>SF52 Number</th>
+							<th>Number of Records</th>
+						</tr>
+					</tfoot> -->
+				</table>
+			</div>
+		</div>
+</section>

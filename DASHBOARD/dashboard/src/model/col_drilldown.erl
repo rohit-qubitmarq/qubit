@@ -1,0 +1,2 @@
+-module(col_drilldown, [Id, Team::string(), HistroicalIncoming::integer(), RemainedOpen::integer(), Incoming::integer(), Outgoing::integer()]).
+-compile(export_all).

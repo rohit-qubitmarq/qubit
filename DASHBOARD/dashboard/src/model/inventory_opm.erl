@@ -1,0 +1,2 @@
+-module(inventory_opm, [Id, CurrentStatus::string(), NumberOfRecords::integer()]).
+-compile(export_all).

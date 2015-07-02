@@ -1,17 +1,14 @@
-<!-- <script src="js/highcharts/themes/gray.js" type="text/javascript"></script> -->
-<h1 class="page-header">
-						<span>Dashboard Climate Statics</span>
-						<!-- <p class="lead">(Metric Charts)</p> -->
-					</h1>
-<div class="main_chartcontainer" 
-	id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto" 
-	ng-controller="ChartCtrl">
-</div>
-<br/>
-<hr/>
-<div class="main_chartcontainer" 
-
-	id="container2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto" 
-	ng-controller="ChartCtrl">
-</div>
-
+<section class="content">
+	<h1 class="page-header">
+		<span>Dashboard Climate Statics</span>
+		<!-- <p class="lead">(Metric Charts)</p> -->
+	</h1>
+	<div>
+		<button class="switcher" id="#sla1">SLA - 1</button>
+		<button class="switcher" id="#sla2">SLA - 2</button>
+		<button class="switcher" id="#sla3">SLA - 3</button>
+	</div>
+	<div class="main_chartcontainer" id="container">
+	</div>
+</section>
+<script src="js/highcharts/themes/dark-blue.js" type="text/javascript"></script>

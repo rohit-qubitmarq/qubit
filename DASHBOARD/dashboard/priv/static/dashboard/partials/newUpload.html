@@ -1,0 +1,302 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="box box-solid box-info">
+			<div class="box-header">
+				<h1 class="box-title"> Upload Metrics Records</h1>
+			</div>
+		<!-- Custom Tabs -->
+		<div class="nav-tabs-custom">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab_1" data-toggle="tab" ng-click="tabClick($event)">HR SLA</a></li>
+				<li><a href="#tab_2" data-toggle="tab" ng-click="tabClick($event)">Hiring Manager</a></li>
+				<li><a href="#tab_3" data-toggle="tab"ng-click="tabClick($event)">Inventory Org</a></li>
+				<li><a href="#tab_4" data-toggle="tab"ng-click="tabClick($event)">Inventory OPM</a></li>
+				<li><a href="#tab_5" data-toggle="tab"ng-click="tabClick($event)">Tenatative Offer</a></li>
+				<li><a href="#tab_6" data-toggle="tab"ng-click="tabClick($event)">52 Request Tracker</a></li>
+				<li><a href="#tab_7" data-toggle="tab"ng-click="tabClick($event)">Aging Example</a></li>
+				<li><a href="#tab_8" data-toggle="tab"ng-click="tabClick($event)">CRM Case</a></li>
+				<li><a href="#tab_9" data-toggle="tab"ng-click="tabClick($event)">SINQ Errors</a></li>
+				<li><a href="#tab_10" data-toggle="tab"ng-click="tabClick($event)">FNCS Mater Recruit List</a></li>
+
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="tab_1">
+					<b>Upload HR Metric Data:</b>
+					<hr/>
+					<div ng-controller="MetricUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>	
+				</div><!-- /.tab-pane -->
+				<div class="tab-pane" id="tab_2">
+					<b>Upload Hiring Manager Data:</b>
+					<hr/>
+					<div ng-controller="hiringmanagerUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>	
+				</div>
+				<div class="tab-pane" id="tab_3">
+					<b>Upload Inventory Organization Data:</b>
+					<hr/>
+					<div ng-controller="inventory_orgUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="tab-pane" id="tab_4">
+					<b>Upload Inventory OPM Data:</b>
+					<hr/>
+					<div ng-controller="inventory_opmUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="tab-pane" id="tab_5">
+					<b>Upload Tentatice Offers Data:</b>
+					<hr/>
+					<div ng-controller="tentativeUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="tab-pane" id="tab_6">
+					<b>Upload 52 Request Tracker Data:</b>
+					<hr/>
+					<div ng-controller="TrackerRequestUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="tab-pane" id="tab_7">
+					<b>Upload Aging Example Data:</b>
+					<hr/>
+					<div ng-controller="AgingExampleUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="tab-pane" id="tab_8">
+					<b>Upload CRM Case Data:</b>
+					<hr/>
+					<div ng-controller="CrmCaseUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="tab-pane" id="tab_9">
+					<b>Upload SINQ Errors Data:</b>
+					<hr/>
+					<div ng-controller="SinqErrorsUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>
+				</div><!-- /.tab-pane -->
+				<div class="tab-pane" id="tab_10">
+					<b>Upload FNCS Master Recruit List Data:</b>
+					<hr/>
+					<div ng-controller="FncsRecruitListUploadCtrl">
+						<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+							<div class="box-body">
+								<label for="exampleInputFile">File input</label><br/><br/>
+								<div class="input-group margin">
+									<span class="btn btn-primary btn-file">
+									Browse<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									</span>
+								</div>
+								
+								<p class="help-block">Upload CSV File to Add Records to MongoDB</p>
+							</div>
+							<div ng-if="content">
+								<h2>File Contents</h2>
+								<pre>{{ content }}</pre><br/><hr/>
+								<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+							</div>
+							<br/>
+							<div class="box-footer">
+								<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>	
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div><!-- /.tab-content -->
+		</div><!-- nav-tabs-custom -->
+	</div><!-- /.col -->
+</div>
+</div> <!-- /.row -->
+
+<script src="js/jquery.csv-0.71.min.js"></script>
+<script src="js/adminLTE/app.js"></script>
+<script src="js/adminLTE/demo.js"></script>

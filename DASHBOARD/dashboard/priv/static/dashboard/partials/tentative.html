@@ -1,0 +1,42 @@
+<section class="content">
+	<div class="row" >
+		<div class="col-md-6">
+			</div><!-- /.box-body-->
+		</div>
+		<div class="col-md-6">
+			<div class="box box-solid box-info">
+				<div class="box-header">
+					<h1 class="box-title">Upload Tentative Offer By Organization(via csv file)</h1>
+				</div>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-sm-12" ng-controller="tentativeUploadCtrl">
+							<form role="form" name="upload" action  = "/metricdashboard/uploads" ng-upload="complete(contents)">
+								<div class="box-body">
+									<label for="exampleInputFile">File input</label><br/><br/>
+									<input type="file" name="avatar" on-read-file="showContent($fileContent)"></input>
+									<br/>
+									<p class="help-block">Upload csv file </p>
+								</div>
+								<div ng-if="content">
+									<h2>File Contents</h2>
+									<pre>{{ content }}</pre><br/><hr/>
+									<pre><h2>Converted CSV into Json :=> </h2><br/>{{ jsonContent }}</pre>
+								</div>
+								<br/>
+								<div class="box-footer">
+									<input class="btn btn-info" type="submit" value="Upload" upload-submit></input>
+								</div>
+								<!-- <a href='javascript:void(0)' class="upload-submit"> Upload </a> -->
+							</form>
+						</div>
+					</div>
+				</div><!-- /.box-body -->
+			</div><!-- /.box-body-->
+		</div>
+	</div>
+</section>
+
+<script src="js/jquery.csv-0.71.min.js"></script>
+<script src="js/adminLTE/app.js"></script>
+<script src="js/adminLTE/demo.js"></script>

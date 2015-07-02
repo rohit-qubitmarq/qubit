@@ -1,44 +1,146 @@
+<section class="content">
+	<div class="row">
+		<div class="col-md-6">
+		<!-- left column -->
+			<!-- general form elements -->
+			<div class="box box-solid box-success" ng-controller="DashboardCtrl">
+				<div class="box-header">
+					<h3 class="box-title">User Registration</h3>
+				</div><!-- /.box-header -->
+				<!-- form start -->
+				<form role="form" name="registerfrm">
+					<div class="box-body">
+						<div class="form-group">
+							<label>User Name</label>
+							<input type="text" class="form-control" name="username" id="username" ng-model="username" ng-minlength="5" placeholder="Enter Username" required="true" autofocus/ >
+						</div>
+						<div class="form-group">
+							<label>First Name</label>
+							<input type="text" class="form-control" name="firstname" id="fname" ng-model="firstname" placeholder="Enter FirstName" required/>
+						</div>
+						<div class="form-group">
+							<label>Last Name</label>
+							<input type="text" class="form-control" name="lastname" id="lname" ng-model="lastname" placeholder="Enter LastName" required/>
+						</div>
+						<div class="form-group">
+							<label>Email address</label>
+							<input type="email" class="form-control" name="email" id="email" ng-model="email" placeholder="Enter email" required/>
+						</div>
+						<div class="form-group">
+							<label >Password</label>
+							<input type="password" class="form-control" name="password" id="pass" ng-model="password" placeholder="PassW0rd" ng-minlength="6" ng-maxlength="10" required />
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword2">Confirm Password</label>
+							<input type="password" class="form-control" name="confirm_password" id="cnfmpass" ng-model="confirm_password" placeholder="Confirm PassW0rd" ng-minlength="6" ng-maxlength="10" required/>
+						</div>
+					</div><!-- /.box-body -->
+					<div class="box-footer">
+						<button type="submit" class="btn btn-success"  ng-click="register()">Submit</button>
+					</div>
+				</form>
+			</div><!-- /.box -->
+		</div>
+	</div><!-- /row -->
+	<div class="col-md-6">
+		
+	</div>
+</section>
+
+
+	<!-- 
+		<div class="box box-info">
+			<div class="box-header">
+				<h1 class="page-header text-center">User Regiteration</h1>
+			</div>
+			
+				<div class="row">
+					<div class="col-md-6" ng-controller="DashboardCtrl">
+						  <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">User Registration</h3>
+                                </div><!-- /.box-header -->
+						<!-- <form role="form">
+							<div class="box-body">
+								<div class="form-group">
+									<label>Username</label>
+									<input type="text" class="form-control" name="username" id="username" ng-model="username" ng-minlength="5" placeholder="UserName" required="true" autofocus/>
+								</div>
+
+							<div class="form-group">
+									<label>Firstname</label>
+									<input type="text" class"form-control" name="firstname" id="fname" ng-model="firstname" placeholder="FirstName" required/>
+								</div>
+								<div class="form-group">
+									<label>Lastname</label>
+									<input type="text" class"form-control" name="lastname" id="lname" ng-model="lastname" placeholder="LastName" required/>
+								</div>
+								<div class="form-group">
+									<label>Email address</label>
+									<input type="email" class"form-control" name="email" id="email" ng-model="email" placeholder="Email Address" required/>
+								<div class="form-group">
+									<label>Password</label>
+									<input class"form-control" type="password" name="password" id="pass" ng-model="password" placeholder="PassW0rd" ng-minlength="6" ng-maxlength="10" requireds/>
+								</div>
+								<div class="form-group">
+									<label>Confirm Password</label>
+									<input class"form-control" type="password" name="confirm_password" id="cnfmpass" ng-model="confirm_password" placeholder="Confirm PassW0rd" ng-minlength="6" ng-maxlength="10" required/>
+								</div>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-primary" ng-click="register()">Submit</button>
+								</div>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			
+		
+	</div>  -->
+</div>
+
+<!-- 
 <div id="register" class="controls" ng-controller="DashboardCtrl">
 	<form novalidate class="form-horizontal" name="registerfrm">
 		<fieldset><legend>Tell us about yourself - </legend>All fields required <strong>*</strong></fieldset>
 		
 			<div class="control-group">
-				<label class="control-label" for="username"><i class="icon-user icon-large"></i> Username :</label>
+				<label class="control-label" for="username"><i class="icon-user icon-large"></i> Username</label>
 				<div class="controls">
 					<input class="input-xlarge" type="text" name="username" id="username" ng-model="username" ng-minlength="5" placeholder="UserName" required="true" autofocus/><br />
 				</div>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label" for="fname"> Firstname :</label>
+				<label class="control-label" for="fname"> Firstname</label>
 				<div class="controls">
 					<input class="input-xlarge" type="text" name="firstname" id="fname" ng-model="firstname" placeholder="FirstName" required/><br />
 				</div>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label" for="lname"> Lastname :</label>
+				<label class="control-label" for="lname"> Lastname</label>
 				<div class="controls">
 					<input class="input-xlarge" type="text" name="lastname" id="lname" ng-model="lastname" placeholder="LastName" required /><br />
 				</div>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label" for="email"><i class="icon-envelope icon-large"></i> Email :</label>
+				<label class="control-label" for="email"><i class="icon-envelope icon-large"></i> Email</label>
 				<div class="controls">
 					<input class="input-xlarge" type="email" name="email" id="email" ng-model="email" placeholder="Email Address" required/><br />
 				</div>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label" for="pass"><i class="fa fa-key fa-1g"></i> Password :</label>
+				<label class="control-label" for="pass"><i class="fa fa-key fa-1g"></i> Password</label>
 				<div class="controls">
 					<input class="input-xlarge" type="password" name="password" id="pass" ng-model="password" placeholder="PassW0rd" ng-minlength="6" ng-maxlength="10" required/><br />
 				</div>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label" for="cnfmpass"><i class="fa fa-key fa-1g"></i> Confirm Password :</label>
+				<label class="control-label" for="cnfmpass"><i class="fa fa-key fa-1g"></i> Confirm Password</label>
 				<div class="controls">
 					<input class="input-xlarge" type="password" name="confirm_password" id="cnfmpass" ng-model="confirm_password" placeholder="Confirm PassW0rd" ng-minlength="6" ng-maxlength="10" required /><br />
 				</div>
@@ -52,4 +154,4 @@
 			
 		</form>		
 	</div>
-</div>
+</div> -->

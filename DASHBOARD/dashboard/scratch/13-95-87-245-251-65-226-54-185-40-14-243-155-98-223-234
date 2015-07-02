@@ -1,0 +1,66 @@
+Group,TypeOfAction,Values
+0 to 30,blank,0
+31 to 60,blank,0
+61 to 90,blank,0
+91 to 120,blank,0
+121>,blank,0
+0 to 30,Cancellation,4
+31 to 60,Cancellation,2
+61 to 90,Cancellation,0
+91 to 120,Cancellation,0
+121>,Cancellation,0
+0 to 30,Change In Duty Station,48
+31 to 60,Change In Duty Station,14
+61 to 90,Change In Duty Station,6
+91 to 120,Change In Duty Station,2
+121>,Change In Duty Station,0
+0 to 30,Classification,113
+31 to 60,Classification,52
+61 to 90,Classification,2
+91 to 120,Classification,7
+121>,Classification,17
+0 to 30,Conversion,54
+31 to 60,Conversion,6
+61 to 90,Conversion,0
+91 to 120,Conversion,1
+121>,Conversion,2
+0 to 30,Correction to SF-50,96
+31 to 60,Correction to SF-51,18
+61 to 90,Correction to SF-52,4
+91 to 120,Correction to SF-53,4
+121>,Correction to SF-54,15
+0 to 30,Detail,54
+31 to 60,Detail,16
+61 to 90,Detail,3
+91 to 120,Detail,0
+121>,Detail,0
+0 to 30,Promotion,346
+31 to 60,Promotion,56
+61 to 90,Promotion,7
+91 to 120,Promotion,1
+121>,Promotion,4
+0 to 30,Realignment,20
+31 to 60,Realignment,1
+61 to 90,Realignment,1
+91 to 120,Realignment,2
+121>,Realignment,1
+0 to 30,Reassignment,74
+31 to 60,Reassignment,14
+61 to 90,Reassignment,7
+91 to 120,Reassignment,3
+121>,Reassignment,2
+0 to 30,Recruit/Fill,6481
+31 to 60,Recruit/Fill,4130
+61 to 90,Recruit/Fill,182
+91 to 120,Recruit/Fill,259
+121>,Recruit/Fill,232
+0 to 30,Reinstatement,0
+31 to 60,Reinstatement,2
+61 to 90,Reinstatement,0
+91 to 120,Reinstatement,1
+121>,Reinstatement,0
+0 to 30,Transfer,2
+31 to 60,Transfer,1
+61 to 90,Transfer,1
+91 to 120,Transfer,1
+121>,Transfer,0

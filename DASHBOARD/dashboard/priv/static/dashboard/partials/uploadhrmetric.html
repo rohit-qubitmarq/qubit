@@ -3,7 +3,7 @@
 </h1>
 
 <div ng-app="app">
-	<div ng-controller="MetricUploadCtrl">
+	<div ng-controller="FileUploadCtrl">
 		<form name="upload" action="/metricdashboard/uploads" ng-upload="complete(contents)">
 			<input type="file" name="metric" on-read-file="showContent($fileContent)"></input>
 			<div ng-if="content">

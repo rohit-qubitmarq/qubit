@@ -1,0 +1,81 @@
+Group,ProviderGroup,Values
+0-10,HRIS,73
+11-30,HRIS,7
+31-60,HRIS,1
+61+,HRIS,5
+Avg Age,HRIS,7
+0-10,Classification,10
+11-30,Classification,0
+31-60,Classification,0
+61+,Classification,0
+Avg Age,Classification,1
+0-10,Pay,205
+11-30,Pay,99
+31-60,Pay,39
+61+,Pay,14
+Avg Age,Pay,15
+0-10,Performance & Awards,9
+11-30,Performance & Awards,0
+31-60,Performance & Awards,2
+61+,Performance & Awards,0
+Avg Age,Performance & Awards,9
+0-10,HSPD-12,4
+11-30,HSPD-12,1
+31-60,HSPD-12,1
+61+,HSPD-12,0
+Avg Age,HSPD-12,13
+0-10,OWCP,21
+11-30,OWCP,0
+31-60,OWCP,0
+61+,OWCP,0
+Avg Age,OWCP,1
+0-10,Benefits/Retirement,125
+11-30,Benefits/Retirement,63
+31-60,Benefits/Retirement,42
+61+,Benefits/Retirement,36
+Avg Age,Benefits/Retirement,24
+0-10,Workforce Planning,3
+11-30,Workforce Planning,1
+31-60,Workforce Planning,0
+61+,Workforce Planning,0
+Avg Age,Workforce Planning,10
+0-10,Center of Learning,32
+11-30,Center of Learning,0
+31-60,Center of Learning,0
+61+,Center of Learning,0
+Avg Age,Center of Learning,3
+0-10,Employment Ops,210
+11-30,Employment Ops,94
+31-60,Employment Ops,14
+61+,Employment Ops,1
+Avg Age,Employment Ops,10
+0-10,PAR,155
+11-30,PAR,67
+31-60,PAR,38
+61+,PAR,65
+Avg Age,PAR,41
+0-10,Employee Relations,8
+11-30,Employee Relations,2
+31-60,Employee Relations,0
+61+,Employee Relations,0
+Avg Age,Employee Relations,7
+0-10,Labor Relations,0
+11-30,Labor Relations,0
+31-60,Labor Relations,0
+61+,Labor Relations,0
+Avg Age,Labor Relations,1
+0-10,Admin Support,2
+11-30,Admin Support,0
+31-60,Admin Support,0
+61+,Admin Support,3
+Avg Age,Admin Support,111
+0-10,Human Resource Liaisons,2
+11-30,Human Resource Liaisons,0
+31-60,Human Resource Liaisons,0
+61+,Human Resource Liaisons,0
+Avg Age,Human Resource Liaisons,0
+0-10,Public Affairs,0
+11-30,Public Affairs,0
+31-60,Public Affairs,0
+61+,Public Affairs,0
+Avg Age,Public Affairs,0

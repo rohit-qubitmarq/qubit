@@ -1,0 +1,2 @@
+-module(sinq_error_rates, [Id,Group_Processor::string(), NumberOfSinqErrors::integer(), MinFailCount::integer(), AvgFailCount::integer(), MaxFailCount::integer()]).
+-compile(export_all).

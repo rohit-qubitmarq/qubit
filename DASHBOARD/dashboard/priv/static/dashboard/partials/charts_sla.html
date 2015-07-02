@@ -1,9 +1,295 @@
-<h1 class="page-header">
-	<span>SLA 1-HC Call Responsiveness </span>
-	<!-- <p class="lead">(Metric Charts)</p> -->
-</h1>
-<div class="main_chartcontainer" 
+<section class="content-header">
+	<h3 align="center">HR Call Metrics</h3>
+</section>
+<section class="content" ng-contorllet="ChartCtrl">
+	<section class="col-lg-12 connectedSortable">
+		<fieldset>
+			<legend>Operational SLAs</legend>
+		</fieldset>
+		<div class="nav-tabs-custom">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#sla_1" data-toggle="tab" ng-click="tabClick($event)">Operational SLA 1 </a></li>
+				<li><a href="#sla_2" data-toggle="tab" ng-click="tabClick($event)">Operational SLA 2 </a></li>
+				<li><a href="#sla_3" data-toggle="tab" ng-click="tabClick($event)">Operational SLA 3 </a></li>
+			</ul>
+			<div class="tab-content">
+				<!-- SLA1 -->
+				<div class="tab-pane active" id="sla_1">
+					<p class="pull-right"><i class="fa fa-barcode"> HCOPSCC-1</i></p>
+					<div class="alert alert-info alert-dismissable">
+						<i class="fa fa-info"></i>
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+						Represents the total number of calls received at the ASC-HCM Contact Center that are answered by an agent in 40 seconds or less, divided by the total number of calls received in the ASC-HCM Contact Center.
+					</div>
+					<!-- <h5><i class="fa fa-hand-o-right"></i> Definition:</h5>
+					<p class="text-warning">Average time a call spends in queue before answered in the ASC-HCM Contact Center.</p> -->
+					<table class="table">
+						<tr>
+							<td>
+								<div class="box box-danger">
+									<div class="box-header">
+										<!-- tools box -->
+										<div class="pull-right box-tools">                                        
+											<button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+											<button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+											<button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+										</div><!-- /. tools -->
+										<i class="fa fa-bar-chart-o"></i>
+										<h3 class="box-title">SLA 1 -HC Call Responsiveness</h3>
+									</div>
+									<div class="box-body no-padding">
+										<!-- Chart type switchers -->
+										<!-- <div class="actions">
+											<button class="switcher" id="column">column</button>
+											<button class="switcher" id="area">area</button>
+											<button class="switcher" id="line">line</button>
+											<button class="switcher" id="spline">Spine</button>
+											<button class="switcher" id="areaspline">areaspline</button>
+										</div> -->
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="main_chartcontainer" id="containerSLA1">
+												</div>
+											</div>
+									</div><!-- /.box-body -->
+								</div><!-- /.box-body-->
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="box box-primary">
+									<div class="box-header">
+										<!-- tools box -->
+										<div class="pull-right box-tools">                                        
+											<button class="btn btn-primary btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+											<button class="btn btn-primary btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+											<button class="btn btn-primary btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+										</div><!-- /. tools -->
+										<i class="fa fa-table"></i>
+										<h3 class="box-title">SLA 1- Data Table</h3>
+									</div>
+									<div class="box-body no-padding">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="box-body table-responsive">
+													<table id="sla1" class="table table-bordered table-hover">
+														<thead>
+															<tr>
+																<th>Week</th>
+																<th>Current Year</th>
+																<th>Last Year</th>
+																<th>SLA Low Range</th>
+																<th>SLA High Range</th>
+															</tr>
+														</thead>
+														<tbody ng-repeat = "data in datasla1">
+															<tr>
+																<td>Week {{ data.week }} </td>
+																<td>{{ data.current_year }} %</td>
+																<td>{{ data.last_year }} %</td>
+																<td>{{ data.sla_low_range }} %</td>
+																<td>{{ data.sla_high_range }} %</td>
+															</tr>
+														</tbody>
+														<tfoot>
+															<tr>
+																<th>Week</th>
+																<th>Current Year</th>
+																<th>Last Year</th>
+																<th>SLA Low Range</th>
+																<th>SLA High Range</th>
+															</tr>
+														</tfoot>
+													</table>
+												</div>
+											</div>
+										</div><!-- /.box-body -->
+									</div><!-- /.box-body-->
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- SLA2 -->
+				<div class="tab-pane" id="sla_2">
+					<p class="pull-right"><i class="fa fa-barcode"> HCOPSCC-2</i></p>
+					<div class="alert alert-info alert-dismissable">
+						<i class="fa fa-info"></i>
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+						To show the total percentage of cases with resolutions within Level 1 and Level 2 applied with a time-stamp of 4 business days or less divided by the total number of cases created by HCM Contact Center Level 1 or Level 2 agents. 
+					</div>
+					<table class="table">
+						<tr>
+							<td>
+								<div class="box box-primary">
+									<div class="box-header">
+										<!-- tools box -->
+										<div class="pull-right box-tools">                                        
+											<button class="btn btn-primary btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+											<button class="btn btn-primary btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+											<button class="btn btn-primary btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+										</div><!-- /. tools -->
+										<i class="fa fa-bar-chart-o"></i>
+										<h3 class="box-title">SLA 2 -HC First Call Resolution</h3>
+									</div>
+									<div class="box-body no-padding">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="main_chartcontainer" id="containerSLA2">
+												</div>
+											</div>
+									</div><!-- /.box-body -->
+								</div><!-- /.box-body-->
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="box box-danger">
+									<div class="box-header">
+										<!-- tools box -->
+										<div class="pull-right box-tools">                                        
+											<button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+											<button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+											<button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+										</div><!-- /. tools -->
+										<i class="fa fa-table"></i>
+										<h3 class="box-title">SLA 2 -Data Table</h3>
+									</div>
+									<div class="box-body no-padding">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="box-body table-responsive">
+													<table id="sla1" class="table table-bordered table-hover">
+														<thead>
+															<tr>
+																<th>Week</th>
+																<th>Current Year</th>
+																<th>Last Year</th>
+																<th>SLA Low Range</th>
+																<th>SLA High Range</th>
+															</tr>
+														</thead>
+														<tbody ng-repeat = "data in datasla2">
+															<tr>
+																<td>Week {{ data.week }} </td>
+																<td>{{ data.current_year }} %</td>
+																<td>{{ data.last_year }} %</td>
+																<td>{{ data.sla_low_range }} %</td>
+																<td>{{ data.sla_high_range }} %</td>
+															</tr>
+														</tbody>
+														<tfoot>
+															<tr>
+																<th>Week</th>
+																<th>Current Year</th>
+																<th>Last Year</th>
+																<th>SLA Low Range</th>
+																<th>SLA High Range</th>
+															</tr>
+														</tfoot>
+													</table>
+												</div>
+											</div>
+										</div><!-- /.box-body -->
+									</div><!-- /.box-body-->
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
 
-	id="containerSLA1" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto" 
-	ng-controller="ChartCtrl">
-</div>
+				<!-- SLA3 -->
+
+				<div id="sla_3" class="tab-pane">
+					<p class="pull-right"><i class="fa fa-barcode"> HCOPSCC-3</i></p>
+					<div class="alert alert-info alert-dismissable">
+						<i class="fa fa-info"></i>
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+						To show the total number of cases with resolutions within Level 3 applied with a time-stamp of 10 business days or less divided by the total number of cases assigned to Level 3 within the ASC-HCM Service Center.
+					</div>
+					<!-- <h5><i class="fa fa-hand-o-right"></i> Definition:</h5>
+					<p class="text-warning"> The number of cases that receive resolution within 10 business days after being assigned to Level 3 of the ASC-HCM Service Center. Level 3 is defined as all HCM program area subject matter experts (SMEs) EXCLCUDING the contact center. </p> -->
+					<table class="table">
+						<tr>
+							<td>
+								<div class="box box-info">
+									<div class="box-header">
+										<!-- tools box -->
+										<div class="pull-right box-tools">                                        
+											<button class="btn btn-info btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+											<button class="btn btn-info btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+											<button class="btn btn-info btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+										</div><!-- /. tools -->
+										<i class="fa fa-bar-chart-o"></i>
+										<h3 class="box-title">SLA 3 -HC Level 3 Case Resolution</h3>
+									</div>
+									<div class="box-body no-padding">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="main_chartcontainer" id="containerSLA3">
+												</div>
+											</div>
+									</div><!-- /.box-body -->
+								</div><!-- /.box-body-->
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="box box-success">
+									<div class="box-header">
+										<!-- tools box -->
+										<div class="pull-right box-tools">                                        
+											<button class="btn btn-success btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+											<button class="btn btn-success btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+											<button class="btn btn-success btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+										</div><!-- /. tools -->
+										<i class="fa fa-table"></i>
+										<h3 class="box-title">SLA 3 -Data Table</h3>
+									</div>
+									<div class="box-body no-padding">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="box-body table-responsive">
+													<table id="sla1" class="table table-bordered table-hover">
+														<thead>
+															<tr>
+																<th>Week</th>
+																<th>Current Year</th>
+																<th>Last Year</th>
+																<th>SLA Low Range</th>
+																<th>SLA High Range</th>
+															</tr>
+														</thead>
+														<tbody ng-repeat = "data in datasla3">
+															<tr>
+																<td>Week {{ data.week }} </td>
+																<td>{{ data.current_year }} %</td>
+																<td>{{ data.last_year }} %</td>
+																<td>{{ data.sla_low_range }} %</td>
+																<td>{{ data.sla_high_range }} %</td>
+															</tr>
+														</tbody>
+														<tfoot>
+															<tr>
+																<th>Week</th>
+																<th>Current Year</th>
+																<th>Last Year</th>
+																<th>SLA Low Range</th>
+																<th>SLA High Range</th>
+															</tr>
+														</tfoot>
+													</table>
+												</div>
+											</div>
+										</div><!-- /.box-body -->
+									</div><!-- /.box-body-->
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div> <!-- tab-content -->
+	</setion> <!-- well-row -->
+</section> <!-- container -->
+<script src="js/adminLTE/app.js"></script>
+<script src="js/adminLTE/demo.js"></script>

@@ -1,0 +1,2 @@
+-module(tracker_request_by_period, [Id, PayPeriod::string(), HistroicalIncoming::integer(), RemainedOpen::integer(), Incoming::integer(), Outgoing::integer()]).
+-compile(export_all).

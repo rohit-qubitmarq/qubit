@@ -1,0 +1,30 @@
+<script type="text/javascript" src="js/pivotTable/dist/pivot.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var derivers = $.pivotUtilities.derivers;
+			$.get("sec_current_stat.csv", function(fncs) {
+				$("#output").pivotUI($.csv.toArrays(fncs), 
+					{
+					derivedAttributes: {
+						// "Age Bin": derivers.bin("number_of_records", 10)
+						
+					},
+					rows: ["Organization","SEC Priority"],
+					cols: ["Current Status / Milestone"],
+					// rendererName: "Heatmap"
+				});
+			});
+		});
+
+</script>
+
+<section class="col-lg-12 connectedSortable">
+	<h1 class="page-header">
+		<span>Inventory by SEC Priority as Defined by Organization</span>
+	</h1>
+	<div id="output" style="margin: 5px;"></div>
+</section>
+
+ 
+<script src="js/adminLTE/app.js"></script>
+<script src="js/adminLTE/demo.js"></script>            
